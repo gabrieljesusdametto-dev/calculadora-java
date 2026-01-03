@@ -2,34 +2,36 @@ import java.util.Scanner;
 
 public class calculadora{
     public static void main(String[] args) {
-
-        int num1;
-        int num2;
+    
+        float num1;
+        float num2;
         int operacao;
-
+    
         System.out.println("escolha um número");
-        Scanner entradaUsuario1 = new Scanner(System.in);
-        num1 = entradaUsuario1.nextInt();
-
+        Scanner entradaUsuario = new Scanner(System.in);
+        num1 = entradaUsuario.nextInt();
+    
         System.out.println("escolha outro número");
-        Scanner entradaUsuario2 = new Scanner(System.in);
-        num2 = entradaUsuario2.nextInt();
+        num2 = entradaUsuario.nextInt();
 
-        System.out.println("escolha a operação");
-        Scanner entradaUsuario3 = new Scanner(System.in);
-        operacao = entradaUsuario3.nextInt();
+        System.out.println("escolha a operação"+"\n"+"1.adição"+"\n"+"2.subtração"+"\n"+"3.multiplicação"+"\n"+"4.divisão");
+        operacao = entradaUsuario.nextInt();
 
-        if (operacao == 1){
-            System.out.println("o resultado é " + (num1+num2));
-}else if (operacao == 2){
-    System.out.println("o resultado é " + (num1-num2));
-}else if (operacao == 3){
-    System.out.println("o resultado é " + (num1*num2));
-}else if (operacao == 4){
-    System.out.println("o resultado é " + (num1/num2));
-}
-
-    System.out.println("fim de calculo");
-
-    }  
+        switch(operacao){
+            case 1:
+                System.out.println("O resultado é "+(num1+num2));
+                break;
+            case 2:
+                System.out.println("O resultado é "+(num1-num2));
+                break;
+            case 3:
+                System.out.println("O resultado é "+(num1*num2));
+                break;
+            case 4:
+                System.out.println("O resultado é "+(num1/num2));
+                break;
+            default:
+                System.out.println("operação inválida");
+        }
+    }
 }
